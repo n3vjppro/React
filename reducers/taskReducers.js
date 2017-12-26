@@ -1,11 +1,29 @@
 import { TOGGLE_ONE_TASK, ADD_NEW_TASK } from '../actions/actionTypes';
 
-const taskReducers = (tasks = [], action) => {
+const defaultState = [
+    {
+        taskId: 1,
+        taskName: 'abc',
+        completed: false
+    },
+    {
+        taskId: 2,
+        taskName: 'ab',
+        completed: true
+    },
+    {
+        taskId: 3,
+        taskName: 'a',
+        completed: false
+    }
+]
+
+const taskReducers = (state = defaultState, action) => {
     switch (action.type) {
 
         case ADD_NEW_TASK:
             return [
-                ...tasks,
+                ...state,
                 {
                     taskId: action.taskId,
                     taskName: action.taskName,
@@ -14,12 +32,12 @@ const taskReducers = (tasks = [], action) => {
             ]
 
         case TOGGLE_ONE_TASK:
-            return tasks.map(task =>
+            return state.map(task =>
                 (task.taskId === action.taskId)
                     ? { ...task, completed: !task.completed }
                     : task
             )
-        default: return tasks;
+        default: return state;
     }
 }
 

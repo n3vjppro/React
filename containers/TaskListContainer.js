@@ -3,9 +3,9 @@ import TaskListComponent from '../components/TaskListComponent';
 //import {alert} from 'react-native';
 
 const mapStateToProps = (state)=>{
-    alert(`state send to task list =${JSON.stringify(state)} `);
+    //alert(`state send to task list =${JSON.stringify(state)} `);
     return{
-        tasks:!state.taskReducers?[]:state.taskReducers
+        tasks:!state?[]:state
     }
 };
 

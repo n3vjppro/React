@@ -1,6 +1,6 @@
 import { TOGGLE_ONE_TASK, ADD_NEW_TASK } from './actionTypes';
 
-let newTaskId = 0;
+let newTaskId = 4;
 export const addNewTask = (inputTaskName) => {
 
     return {

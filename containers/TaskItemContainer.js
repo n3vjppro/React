@@ -8,13 +8,12 @@ const mapStateToProps = state => {
 
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (state ) => {
     return {
-        onToggleTask: (taskId) => {
-            dispatch(toggleTask(taskId));
+        tasks:!state?[]:state
         }
     }
-}
 
-const TaskItemContainer = connect(mapDispatchToProps)(TaskItemComponent);
+
+const TaskItemContainer = connect()(TaskItemComponent);
 export default TaskItemContainer;

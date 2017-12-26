@@ -6,13 +6,13 @@ import allReducers from './reducers';
 import {createStore} from 'redux';
 import TaskManagerComponent from './components/TaskManagerComponent'
 
-import Root from './components/ahihi/Root';
-// let store = createStore(allReducers);
-// const App = () =>(
-//     <Provider store={store}>
-//         <TaskManagerComponent />
-//     </Provider>
-// );
+//import Root from './components/ahihi/Root';
+let store = createStore(allReducers);
+const App = () =>(
+    <Provider store={store}>
+        <TaskManagerComponent />
+    </Provider>
+);
 
 
-AppRegistry.registerComponent('ExamRedux', () => Root);
+AppRegistry.registerComponent('ExamRedux', () => App);

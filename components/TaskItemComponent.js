@@ -4,13 +4,14 @@ import {
     TouchableHighlight, RefreshControl, TextInput, TouchableOpacity
 
 } from 'react-native';
-
+import { connect } from 'react-redux';
 export default class TaskItemComponent extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
                 <TouchableOpacity
-                    onPress={this.props.onToggleTask(this.props.taskId)}
+                    onPress={
+                        () => this.props.dispatch({ type: 'TOGGLE_ONE_TASK', taskId: this.props.taskId })}
                 >
                     <Text style={{
                         margin: 20,
@@ -23,3 +24,5 @@ export default class TaskItemComponent extends Component {
         );
     }
 }
+
+//export default connect()(TaskItemComponent);
